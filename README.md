@@ -76,7 +76,7 @@ CREATE TABLE Cultura (
 CREATE TABLE Estado (
     id_estado INT PRIMARY KEY AUTO_INCREMENT,
     nome_estado VARCHAR(100) NOT NULL,
-    regiao VARCHAR(50) -- Opcional: campo adicional para agrupamento por região
+    regiao VARCHAR(50)
 );
 
 -- Tabela Produção
@@ -116,8 +116,8 @@ FROM Producao p
 JOIN Estado e ON p.id_estado = e.id_estado
 JOIN Cultura c ON p.id_cultura = c.id_cultura
 JOIN Safras s ON p.id_safra = s.id_safra
-WHERE c.nome_cultura = 'Soja'  -- Substitua 'Soja' pelo nome da cultura desejada
-  AND s.ano_safra = 2023       -- Substitua 2023 pelo ano da safra desejada
+WHERE c.nome_cultura = 'Soja' 
+  AND s.ano_safra = 2024       
 GROUP BY e.nome_estado;
 ```
 
