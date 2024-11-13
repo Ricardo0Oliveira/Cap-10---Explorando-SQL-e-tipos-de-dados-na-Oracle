@@ -128,7 +128,7 @@ SELECT s.ano_safra, SUM(p.area_plantada) AS area_total
 FROM Producao p
 JOIN Safras s ON p.id_safra = s.id_safra
 JOIN Cultura c ON p.id_cultura = c.id_cultura
-WHERE c.nome_cultura = 'Milho'  -- Substitua 'Milho' pelo nome da cultura desejada
+WHERE c.nome_cultura = 'Milho' 
 GROUP BY s.ano_safra
 ORDER BY s.ano_safra;
 ```
@@ -140,7 +140,7 @@ SELECT e.nome_estado, AVG(p.produtividade) AS produtividade_media
 FROM Producao p
 JOIN Estado e ON p.id_estado = e.id_estado
 JOIN Cultura c ON p.id_cultura = c.id_cultura
-WHERE c.nome_cultura = 'Trigo'  -- Substitua 'Trigo' pelo nome da cultura desejada
+WHERE c.nome_cultura = 'Trigo' 
 GROUP BY e.nome_estado
 ORDER BY produtividade_media DESC;
 ```
