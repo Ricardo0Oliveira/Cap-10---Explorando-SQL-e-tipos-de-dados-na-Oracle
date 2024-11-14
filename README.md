@@ -164,9 +164,7 @@ ORDER BY produtividade_media DESC;
 |             | id_safra           | INT          | Referência da safra                          |
 |             | id_cultura         | INT          | Referência da cultura                        |
 |             | id_estado          | INT          | Referência do estado                         |
-| **Clima**   | id_clima           | INT          | Identificador dos dados
-
- climáticos           |
+| **Clima**   | id_clima           | INT          | Identificador dos dados                      |
 |             | chuvas_mm          | DECIMAL(5,2) | Precipitação em milímetros                   |
 |             | temperatura_media  | DECIMAL(4,2) | Temperatura média em graus Celsius           |
 |             | deficit_hidrico    | DECIMAL(4,2) | Déficit hídrico em milímetros                |
