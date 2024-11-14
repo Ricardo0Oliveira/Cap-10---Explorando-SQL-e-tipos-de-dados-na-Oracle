@@ -161,3 +161,13 @@ ORDER BY produtividade_media DESC;
 |             | id_safra           | INT          | Referência da safra                          |
 |             | id_estado          | INT          | Referência do estado                         |
 
+## 6. Diagrama Entidade-Relacionamento
+![DER](https://github.com/user-attachments/assets/6154aad3-1f90-44f2-ac78-9491f4340b91)
+
+## 7. Diagrama do Modelo Relacional
+![MODELO RELACIONAL](https://github.com/user-attachments/assets/19920064-4feb-4c06-9d5c-c0a6b21d3055)
+
+
+
+
+
