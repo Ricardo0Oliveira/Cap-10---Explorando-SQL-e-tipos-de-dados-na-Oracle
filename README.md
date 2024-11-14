@@ -165,7 +165,7 @@ ORDER BY produtividade_media DESC;
 ![DER](https://github.com/user-attachments/assets/6154aad3-1f90-44f2-ac78-9491f4340b91)
 
 ## 7. Diagrama do Modelo Relacional
-![MODELO RELACIONAL](https://github.com/user-attachments/assets/19920064-4feb-4c06-9d5c-c0a6b21d3055)
+![MODELO RELACIONAL](https://github.com/user-attachments/assets/5064be86-acbe-4640-919b-23a0146a4bef)
 
 
 
