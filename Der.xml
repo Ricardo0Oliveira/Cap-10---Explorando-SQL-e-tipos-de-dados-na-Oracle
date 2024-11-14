@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="Modelo_SAFRA">
+
+  <table name="Safras">
+    <column name="id_safra" type="int" primary_key="true" auto_increment="true" not_null="true"/>
+    <column name="ano_safra" type="int" not_null="true"/>
+    <column name="descricao_safra" type="varchar(100)" not_null="true"/>
+  </table>
+
+  <table name="Cultura">
+    <column name="id_cultura" type="int" primary_key="true" auto_increment="true" not_null="true"/>
+    <column name="nome_cultura" type="varchar(100)" not_null="true"/>
+  </table>
+
+  <table name="Estado">
+    <column name="id_estado" type="int" primary_key="true" auto_increment="true" not_null="true"/>
+    <column name="nome_estado" type="varchar(100)" not_null="true"/>
+    <column name="regiao" type="varchar(50)"/>
+  </table>
+
+  <table name="Produção">
+    <column name="id_producao" type="int" primary_key="true" auto_increment="true" not_null="true"/>
+    <column name="area_plantada" type="decimal(10,2)" not_null="true"/>
+    <column name="producao_total" type="decimal(10,2)" not_null="true"/>
+    <column name="produtividade" type="decimal(10,2)" not_null="true"/>
+    <column name="id_safra" type="int" not_null="true"/>
+    <column name="id_cultura" type="int" not_null="true"/>
+    <column name="id_estado" type="int" not_null="true"/>
+  </table>
+
+  <table name="Clima">
+    <column name="id_clima" type="int" primary_key="true" auto_increment="true" not_null="true"/>
+    <column name="chuvas_mm" type="decimal(5,2)" not_null="true"/>
+    <column name="temperatura_media" type="decimal(4,2)" not_null="true"/>
+    <column name="deficit_hidrico" type="decimal(4,2)" not_null="true"/>
+    <column name="id_safra" type="int" not_null="true"/>
+    <column name="id_estado" type="int" not_null="true"/>
+  </table>
+
+  <relationships>
+    <!-- Foreign Keys -->
+    <relationship from_table="Produção" from_column="id_safra" to_table="Safras" to_column="id_safra"/>
+    <relationship from_table="Produção" from_column="id_cultura" to_table="Cultura" to_column="id_cultura"/>
+    <relationship from_table="Produção" from_column="id_estado" to_table="Estado" to_column="id_estado"/>
+    <relationship from_table="Clima" from_column="id_safra" to_table="Safras" to_column="id_safra"/>
+    <relationship from_table="Clima" from_column="id_estado" to_table="Estado" to_column="id_estado"/>
+  </relationships>
+
+</database>
