@@ -4,34 +4,25 @@
 
 Este documento descreve o modelo de banco de dados utilizado para o monitoramento da produção agrícola no Brasil. O objetivo é armazenar, organizar e permitir a análise de dados sobre produção agrícola, incluindo informações sobre safras, culturas, área plantada, produtividade, produção total e condições climáticas, com base em dados fornecidos por órgãos como CONAB, IBGE, MAPA, Embrapa e INPE.
 
-### Objetivo do Banco de Dados
-- Armazenar e organizar dados sobre produção agrícola de diferentes culturas em cada estado e safra.
-- Facilitar a análise de produtividade, área plantada e condições climáticas associadas a cada safra.
-- Permitir consultas avançadas para análise histórica de produção, desempenho regional e influência de variáveis climáticas.
-
 ## 2. Descrição das Entidades e Relacionamentos
 
 ### 2.1 Entidades e Atributos
 
 #### Safras
-Representa os períodos de colheita, categorizados por ano e com uma descrição opcional.
    - **id_safra**: INT, PRIMARY KEY, AUTO_INCREMENT, NOT NULL
    - **ano_safra**: INT, NOT NULL
    - **descricao_safra**: VARCHAR(100), NOT NULL
 
 #### Cultura
-Armazena os diferentes tipos de culturas agrícolas (ex: milho, soja, trigo).
    - **id_cultura**: INT, PRIMARY KEY, AUTO_INCREMENT, NOT NULL
    - **nome_cultura**: VARCHAR(100), NOT NULL
 
 #### Estado
-Identifica os estados onde a produção ocorre.
    - **id_estado**: INT, PRIMARY KEY, AUTO_INCREMENT, NOT NULL
    - **nome_estado**: VARCHAR(100), NOT NULL
-   - **regiao**: VARCHAR(50), NULL (campo opcional para agrupar estados por regiões)
+   - **regiao**: VARCHAR(50), NULL 
 
 #### Produção
-Registra os dados específicos de produção de uma cultura em um estado e safra específicos, incluindo área plantada e produtividade.
    - **id_producao**: INT, PRIMARY KEY, AUTO_INCREMENT, NOT NULL
    - **area_plantada**: DECIMAL(10,2), NOT NULL
    - **producao_total**: DECIMAL(10,2), NOT NULL
@@ -41,7 +32,6 @@ Registra os dados específicos de produção de uma cultura em um estado e safra
    - **id_estado**: INT, NOT NULL, FOREIGN KEY referencing Estado(id_estado)
 
 #### Clima
-Armazena os dados climáticos relacionados a uma safra específica em um estado, como precipitação e temperatura média.
    - **id_clima**: INT, PRIMARY KEY, AUTO_INCREMENT, NOT NULL
    - **chuvas_mm**: DECIMAL(5,2), NOT NULL
    - **temperatura_media**: DECIMAL(4,2), NOT NULL
